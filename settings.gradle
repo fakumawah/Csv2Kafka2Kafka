@@ -1,3 +1,5 @@
 
-rootProject.name="Csv2Kafka2Kafka"
+rootProject.name="csv2kafka2kafka"
+include 'csv-reader'
+include 'kafka2kafka'
 

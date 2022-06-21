@@ -1,4 +1,4 @@
-package de.ri.core;
+package de.ri.core.service;
 
 import io.micronaut.configuration.kafka.annotation.KafkaListener;
 import io.micronaut.configuration.kafka.annotation.Topic;

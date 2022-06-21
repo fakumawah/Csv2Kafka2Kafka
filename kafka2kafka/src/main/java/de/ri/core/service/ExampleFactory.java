@@ -1,4 +1,4 @@
-package de.ri.core;
+package de.ri.core.service;
 
 import io.micronaut.configuration.kafka.streams.ConfiguredStreamBuilder;
 import io.micronaut.context.annotation.Factory;

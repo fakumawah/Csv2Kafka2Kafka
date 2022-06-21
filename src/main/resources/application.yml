@@ -1,8 +1,0 @@
-micronaut:
-  application:
-    name: csv2Kafka2Kafka
-netty:
-  default:
-    allocator:
-      max-order: 3
-kafka.bootstrap.servers: localhost:9092

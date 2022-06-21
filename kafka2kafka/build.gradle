@@ -1,0 +1,26 @@
+plugins {
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("io.micronaut.application") version "3.4.1"
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+mainClassName = "de.ri.core.Application"
+
+applicationDefaultJvmArgs = ["-XX:+UseG1GC",
+                             "-XX:MinRAMPercentage=50",
+                             "-XX:MaxRAMPercentage=75",
+                             "-Xlog:gc*=info:file=gc.log:time,uptime:filecount=20,filesize=3m",
+                             "-XX:+AlwaysActAsServerClassMachine",
+                             "-XX:NativeMemoryTracking=summary",
+                             "-XX:ConcGCThreads=2",
+                             "-XX:ParallelGCThreads=2",
+                             "-XX:+UseStringDeduplication"]
+
+
+test {
+    useJUnitPlatform()
+}
