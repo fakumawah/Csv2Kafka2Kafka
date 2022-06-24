@@ -1,5 +1,7 @@
-orbs:
-  gradle: circleci/gradle@2.2.0
+definitions:
+  services:
+    java:
+      image: openjdk:8
 version: 2.1
 jobs:
   build:
