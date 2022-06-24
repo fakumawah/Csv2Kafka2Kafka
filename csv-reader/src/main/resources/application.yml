@@ -1,0 +1,55 @@
+micronaut:
+  application:
+    name: csv-reader
+    store.ttl.hours: 8
+    metrics:
+      enabled: true
+      export:
+        prometheus:
+          enabled: true
+          step: PT1M
+          description: true
+  server:
+    port: -1
+kafka.bootstrap.servers: localhost:9092
+kafka:
+  bootstrap:
+    servers: localhost:9092
+#  streams:
+#    default:
+#      num.stream.threads: 1
+netty:
+  default:
+    allocator:
+      max-order: 5
+#---
+endpoints:
+  all:
+    port: 9090
+  beans:
+    enabled: true
+    sensitive: false
+  info:
+    enabled: true
+    sensitive: false
+  routes:
+    enabled: false
+    sensitive: true
+  loggers:
+    enabled: false
+    sensitive: true
+  stop:
+    enabled: false
+    sensitive: true
+  env:
+    enabled: false
+    sensitive: true
+  health:
+    enabled: true
+    sensitive: false
+    details-visible: ANONYMOUS
+    kafka-streams:
+      enabled: true
+  prometheus:
+    enabled: true
+    sensitive: false

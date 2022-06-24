@@ -2,8 +2,8 @@ package de.ri.reader;
 
 import io.micronaut.runtime.Micronaut;
 
-public class Application {
+public class CsvReader {
     public static void main(String[] args) {
-        Micronaut.run(Application.class, args);
+        Micronaut.run(CsvReader.class, args);
     }
 }

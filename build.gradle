@@ -4,7 +4,7 @@ plugins {
 }
 
 //allprojects {
-////    version = "0.1"
+//    version = "0.1"
 //    group = "de.ri.core"
 //}
 
@@ -14,7 +14,8 @@ subprojects { subproject ->
     apply plugin: "project-report"
     apply plugin: "jacoco"
 
-    ext.artifactid = ""
+    ext.artifactid = "${rootProject.name}-${project.name}"
+//    ext.artifactid = "${project.name}"
 
     java {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -51,7 +52,6 @@ subprojects { subproject ->
         implementation("io.micronaut:micronaut-http-client")
         implementation("io.micronaut:micronaut-jackson-databind")
         implementation("io.micronaut.kafka:micronaut-kafka")
-        implementation("io.micronaut.kafka:micronaut-kafka-streams")
         implementation("io.micronaut.test:micronaut-test-junit5")
         implementation("jakarta.annotation:jakarta.annotation-api")
         compileOnly("org.projectlombok:lombok")
