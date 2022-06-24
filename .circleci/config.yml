@@ -1,6 +1,4 @@
 version: 2.1
-orbs:
-  openjdk-install: cloudesire/openjdk-install@1.2.3
 jobs:
   build:
     docker:
@@ -11,7 +9,7 @@ jobs:
           name: The First Step
           command: |
             echo 'Hello World!'
-            ./gradlew clean build
+
 
   build-image:
     docker:
@@ -23,3 +21,17 @@ jobs:
           command: |
             docker 
             echo 'This is the delivery pipeline'
+
+  example-job:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - docker/build:
+          image: csv-reader:latest
+          dockerfile: /csv-reader/etc/Dockerfile
+
+workflows:
+  example-workflow:
+    jobs:
+      - example-job
